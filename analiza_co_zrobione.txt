@@ -1,0 +1,16 @@
+pojedyncze zmienne:
+
+- track_genre
+- artists
+- loudness
+
+wykresy: (4 typy)
+
+- histogram dla 'loudness'
+- scatter dla 'energy':'danceability'
+
+związki między zmiennymi:
+
+- 'energy':'danceability'
+- 'danceability':'valence'
+- 'loudness':'energy'
