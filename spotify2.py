@@ -29,7 +29,7 @@ print('dominanta: ', dane['loudness'].mode())
 plt.hist(dane['loudness'], bins=20)
 plt.xlabel('głośność [dB]')
 plt.ylabel('liczba utworów')
-#plt.show()
+plt.show()
 
 
 #czy energiczność utworu koreluje z tanecznością
@@ -45,7 +45,7 @@ plt.xlim([0,0.2])
 plt.ylim([0,0.2])
 plt.xlabel('taneczność')
 plt.ylabel('energiczność')
-#plt.show()
+plt.show()
 
 # Istotna statystycznie, o słabej sile
 
