@@ -95,3 +95,9 @@ print(korr)
 
 #istotny statystycznie umiarkowany związek między zmiennymi
 
+#korelacja loudness - valence
+korelacja = st.pearsonr(loudness, valence)
+print(korelacja)
+
+#istotny statystycznie dodatni związek o słabej sile
+
