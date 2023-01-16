@@ -19,6 +19,15 @@ print('liczba wartości zmiennej: ', dane['artists'].count())
 print("tyle razy w zestawieniu pojawia się artysta: \n", dane['artists'].value_counts())
 print('dominanta: ', dane['artists'].mode())
 
+#analiza zmiennej: explicit
+dane['explicit'] = dane['explicit'].astype('category')
+print('Liczba wartości zmiennej: ', dane['explicit'].count())
+print('Liczba wyników dla każdej kategorii: ',dane['explicit'].value_counts())
+print('dominanta: ', dane['explicit'].mode())
+
+plt.pie([104253,9747], labels = ['wyraźny tekst', 'niewyraźny tekst'], autopct = '%1.1f%%')
+plt.show()
+
 #analiza statystyczna zmiennej - loudness
 print('Statystyki głośności:')
 print(dane['loudness'].describe())
@@ -31,9 +40,28 @@ plt.xlabel('głośność [dB]')
 plt.ylabel('liczba utworów')
 plt.show()
 
+#analiza zmiennej: valence
+print('Statystyki pozytywności utworów:')
+print(dane['valence'].describe())
+print('wariancja: ', dane['valence'].var())
+print('mediana: ', dane['valence'].median())
+print('dominanta: ', dane['valence'].mode())
+
+#analiza zmiennej: danceability
+print('Statystyki taneczności utworów:')
+print(dane['danceability'].describe())
+print('wariancja: ', dane['danceability'].var())
+print('mediana: ', dane['danceability'].median())
+print('dominanta: ', dane['danceability'].mode())
+
+#analiza zmiennej: energy
+print('Statystyki energiczności utworów:')
+print(dane['energy'].describe())
+print('wariancja: ', dane['energy'].var())
+print('mediana: ', dane['energy'].median())
+print('dominanta: ', dane['energy'].mode())
 
 #czy energiczność utworu koreluje z tanecznością
-
 print(dane[['energy','danceability']])
 taneczność = pd.Series(dane['danceability'])
 energiczność = pd.Series(dane['energy'])
