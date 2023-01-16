@@ -26,6 +26,7 @@ print('Liczba wyników dla każdej kategorii: ',dane['explicit'].value_counts())
 print('dominanta: ', dane['explicit'].mode())
 
 plt.pie([104253,9747], labels = ['wyraźny tekst', 'niewyraźny tekst'], autopct = '%1.1f%%')
+plt.title('Czy teksty utworów są wyraźne?')
 plt.show()
 
 #analiza statystyczna zmiennej - loudness
@@ -38,6 +39,7 @@ print('dominanta: ', dane['loudness'].mode())
 plt.hist(dane['loudness'], bins=20)
 plt.xlabel('głośność [dB]')
 plt.ylabel('liczba utworów')
+plt.title('Głośność utworów')
 plt.show()
 
 #analiza zmiennej: valence
@@ -66,13 +68,14 @@ print(dane[['energy','danceability']])
 taneczność = pd.Series(dane['danceability'])
 energiczność = pd.Series(dane['energy'])
 korealcja = st.pearsonr(taneczność, energiczność)
-print('korelacja wynosi:',korealcja)
+print('korelacja wynosi:\n',korealcja)
 
 plt.scatter(taneczność, energiczność)
 plt.xlim([0,0.2])
 plt.ylim([0,0.2])
 plt.xlabel('taneczność')
 plt.ylabel('energiczność')
+plt.title('Związek między tanecznością a energicznością utworów')
 plt.show()
 
 # Istotna statystycznie, o słabej sile
