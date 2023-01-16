@@ -63,6 +63,13 @@ print('wariancja: ', dane['energy'].var())
 print('mediana: ', dane['energy'].median())
 print('dominanta: ', dane['energy'].mode())
 
+#podwójny histogram dla: valence i energy
+plt.hist(dane['valence'], bins=15, alpha = 0.3, label='pozytywność')
+plt.hist(dane['energy'], bins=15, alpha = 0.3, label='energiczność')
+plt.legend()
+plt.title('Podwójny histogram dla zmiennych: \'valence\' i \'energy\'')
+plt.show()
+
 #czy energiczność utworu koreluje z tanecznością
 print(dane[['energy','danceability']])
 taneczność = pd.Series(dane['danceability'])
